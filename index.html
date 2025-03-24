@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;LIFT | Protein Beer&lt;/title&gt;
+&lt;style&gt;
+:root {
+--navy: #0a192f;
+--light-blue: #4da8da;
+--accent: #ff3366;
+--gold: #ffc107;
+--light: #f8f9fa;
+--dark: #212529;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;
+}
+
+body {
+background-color: var(--navy);
+color: var(--light);
+line-height: 1.6;
+}
+
+h1, h2, h3 {
+font-weight: 700;
+margin-bottom: 1.5rem;
+}
+
+.container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.5rem 0;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: 800;
+color: var(--light);
+text-decoration: none;
+}
+
+.nav-links {
+display: flex;
+gap: 2rem;
+}
+
+.nav-links a {
+color: var(--light);
+text-decoration: none;
+font-weight: 600;
+transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+color: var(--light-blue);
+}
+
+/* Hero Section */
+.hero {
+display: flex;
+align-items: center;
+justify-content: space-between;
+min-height: 80vh;
+padding: 2rem 0;
+position: relative;
+overflow: hidden;
+}
+
+.hero::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('/api/placeholder/1200/800');
+background-size: cover;
+background-position: center;
+opacity: 0.15;
+z-index: -1;
+}
+
+.hero-content {
+flex: 1;
+padding-right: 2rem;
+z-index: 1;
+}
+
+.hero h1 {
+font-size: 3.5rem;
+line-height: 1.2;
+margin-bottom: 1.5rem;
+}
+
+.hero p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+max-width: 600px;
+}
+
+.hero-image {
+flex: 1;
+display: flex;
+justify-content: center;
+z-index: 1;
+}
+
+.hero-image img {
+max-width: 100%;
+height: auto;
+filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+/* Button Styles */
+.btn {
+display: inline-block;
+padding: 0.8rem 2rem;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn-primary {
+background-color: var(--gold);
+color: var(--dark);
+border: 2px solid var(--gold);
+}
+
+.btn-primary:hover {
+background-color: transparent;
+color: var(--gold);
+}
+
+.btn-secondary {
+background-color: transparent;
+color: var(--light-blue);
+border: 2px solid var(--light-blue);
+margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+background-color: var(--light-blue);
+color: var(--navy);
+}
+
+/* About Section */
+.about {
+padding: 5rem 0;
+background-color: rgba(13, 36, 65, 0.7);
+}
+
+.about-content {
+display: flex;
+gap: 3rem;
+align-items: center;
+}
+
+.about-text {
+flex: 1;
+}
+
+.about-image {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+.about-image img {
+max-width: 100%;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features {
+padding: 5rem 0;
+}
+
+.section-header {
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+
+.feature-card {
+background-color: rgba(13, 36, 65, 0.7);
+border-radius: 10px;
+padding: 2rem;
+text-align: center;
+transition: transform 0.3s ease;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+transform: translateY(-10px);
+}
+
+.feature-icon {
+width: 60px;
+height: 60px;
+margin: 0 auto 1.5rem;
+}
+
+.feature-card h3 {
+font-size: 1.5rem;
+color: var(--gold);
+}
+
+/* Products Section */
+.products {
+padding: 5rem 0;
+background-color: rgba(13, 36, 65, 0.7);
+}
+
+.product-carousel {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.product-card {
+width: 250px;
+text-align: center;
+background-color: rgba(10, 25, 47, 0.8);
+border-radius: 10px;
+padding: 2rem;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-10px);
+}
+
+.product-card img {
+max-width: 100%;
+height: auto;
+margin-bottom: 1.5rem;
+}
+
+.product-card h3 {
+color: var(--light-blue);
+margin-bottom: 0.5rem;
+}
+
+.product-card p {
+margin-bottom: 1.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+padding: 5rem 0;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+
+.testimonial-card {
+background-color: rgba(13, 36, 65, 0.9);
+border-radius: 10px;
+padding: 2rem;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+position: relative;
+}
+
+.testimonial-card::before {
+content: &quot;&quot;&quot;;
+font-size: 5rem;
+position: absolute;
+top: -10px;
+left: 10px;
+color: var(--light-blue);
+opacity: 0.3;
+}
+
+.testimonial-text {
+font-style: italic;
+margin-bottom: 1.5rem;
+position: relative;
+z-index: 1;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+}
+
+.testimonial-author img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin-right: 1rem;
+object-fit: cover;
+}
+
+/* Contact Section */
+.contact {
+padding: 5rem 0;
+background-color: rgba(13, 36, 65, 0.7);
+}
+
+.contact-content {
+display: flex;
+gap: 3rem;
+}
+
+.contact-info {
+flex: 1;
+}
+
+.contact-info p {
+margin-bottom: 1rem;
+}
+
+.contact-form {
+flex: 2;
+}
+
+.form-group {
+margin-bottom: 1.5rem;
+}
+
+.form-control {
+width: 100%;
+padding: 1rem;
+background-color: rgba(13, 36, 65, 0.7);
+border: 1px solid var(--light-blue);
+border-radius: 5px;
+color: var(--light);
+font-size: 1rem;
+}
+
+.form-control:focus {
+outline: none;
+border-color: var(--gold);
+}
+
+textarea.form-control {
+min-height: 150px;
+resize: vertical;
+}
+
+/* Social Media */
+.social-links {
+display: flex;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.social-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: var(--light-blue);
+color: var(--navy);
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+background-color: var(--gold);
+transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+background-color: rgba(5, 15, 30, 0.9);
+padding: 2rem 0;
+text-align: center;
+}
+
+.footer-nav {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+color: var(--light);
+text-decoration: none;
+}
+
+.footer-nav a:hover {
+color: var(--light-blue);
+}
+
+.newsletter {
+max-width: 500px;
+margin: 0 auto 2rem;
+}
+
+.newsletter-form {
+display: flex;
+}
+
+.newsletter-input {
+flex: 1;
+padding: 0.8rem;
+border: none;
+border-radius: 5px 0 0 5px;
+background-color: rgba(255, 255, 255, 0.1);
+color: var(--light);
+}
+
+.newsletter-btn {
+padding: 0.8rem 1.5rem;
+background-color: var(--gold);
+color: var(--dark);
+border: none;
+border-radius: 0 5px 5px 0;
+cursor: pointer;
+}
+
+/* Age Verification */
+.age-verification {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(10, 25, 47, 0.95);
+z-index: 1000;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.age-verification-content {
+background-color: var(--navy);
+border-radius: 10px;
+padding: 2rem;
+text-align: center;
+max-width: 500px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.age-verification-content h2 {
+margin-bottom: 1rem;
+}
+
+.age-verification-buttons {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+.fade-in {
+animation: fadeIn 1s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.hero {
+flex-direction: column;
+text-align: center;
+}
+
+.hero-content {
+padding-right: 0;
+margin-bottom: 2rem;
+}
+
+.about-content {
+flex-direction: column-reverse;
+}
+
+.contact-content {
+flex-direction: column;
+}
+
+.btn-secondary {
+margin-left: 0;
+margin-top: 1rem;
+}
+
+.newsletter-form {
+flex-direction: column;
+}
+
+.newsletter-input {
+border-radius: 5px;
+margin-bottom: 0.5rem;
+}
+
+.newsletter-btn {
+border-radius: 5px;
+}
+}
+&lt;/style&gt;
+&lt;link href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Age Verification (JavaScript will control visibility) --&gt;
+&lt;div class=&quot;age-verification&quot; id=&quot;ageVerification&quot;&gt;
+&lt;div class=&quot;age-verification-content&quot;&gt;
+&lt;h2&gt;Age Verification&lt;/h2&gt;
+&lt;p&gt;You must be of legal drinking age to enter this site.&lt;/p&gt;
+&lt;p&gt;Are you 21 or older?&lt;/p&gt;
+&lt;div class=&quot;age-verification-buttons&quot;&gt;
+&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;verifyAge(true)&quot;&gt;Yes, I am 21+&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary&quot; onclick=&quot;verifyAge(false)&quot;&gt;No, I am under 21&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Navigation --&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;nav&gt;
+&lt;a href=&quot;#&quot; class=&quot;logo&quot;&gt;LIFT&lt;/a&gt;
+&lt;div class=&quot;nav-links&quot;&gt;
+&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+&lt;a href=&quot;#features&quot;&gt;Features&lt;/a&gt;
+&lt;a href=&quot;#products&quot;&gt;Products&lt;/a&gt;
+&lt;a href=&quot;#testimonials&quot;&gt;Testimonials&lt;/a&gt;
+&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;!-- Hero Section --&gt;
+&lt;section class=&quot;hero&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;hero-content fade-in&quot;&gt;
+&lt;h1&gt;PROTEIN THAT RAISES THE BAR&lt;/h1&gt;
+&lt;p&gt;Introducing LIFT - the revolutionary high-protein, low-calorie beer crafted from citrus wheat protein. Enjoy the taste you love with the benefits your body deserves.&lt;/p&gt;
+&lt;a href=&quot;#products&quot; class=&quot;btn btn-primary&quot;&gt;SHOP NOW&lt;/a&gt;
+&lt;a href=&quot;#about&quot; class=&quot;btn btn-secondary&quot;&gt;LEARN MORE&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;hero-image fade-in&quot;&gt;
+&lt;img src=&quot;/api/placeholder/400/500&quot; alt=&quot;LIFT Protein Beer in a navy blue can&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- About Section --&gt;
+&lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;section-header&quot;&gt;
+&lt;h2&gt;REDEFINING PROTEIN BEVERAGES&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;about-content&quot;&gt;
+&lt;div class=&quot;about-image&quot;&gt;
+&lt;img src=&quot;/api/placeholder/500/300&quot; alt=&quot;Weightlifter drinking LIFT Protein Beer&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;about-text&quot;&gt;
+&lt;h3&gt;WHERE FLAVOR MEETS FUNCTION&lt;/h3&gt;
+&lt;p&gt;LIFT isn't your ordinary protein supplement or beer. We've pioneered a revolutionary brewing process that infuses our citrus wheat protein directly into a craft beer base, creating the world's first truly delicious high-protein beer.&lt;/p&gt;
+&lt;p&gt;Our proprietary fermentation technique preserves the complete amino acid profile while eliminating excess carbs and calories. Each can delivers 15g of complete protein with only 100 calories and 3g of carbs, all while maintaining the authentic taste and experience of a premium beer.&lt;/p&gt;
+&lt;p&gt;Created by fitness enthusiasts who refused to choose between enjoying a social drink and maintaining their nutrition goals, LIFT represents the perfect balance of pleasure and performance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Features Section --&gt;
+&lt;section id=&quot;features&quot; class=&quot;features&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;section-header&quot;&gt;
+&lt;h2&gt;WHY CHOOSE LIFT&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;features-grid&quot;&gt;
+&lt;div class=&quot;feature-card&quot;&gt;
+&lt;div class=&quot;feature-icon&quot;&gt;
+&lt;i class=&quot;fas fa-dumbbell fa-3x&quot; style=&quot;color: var(--gold);&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;h3&gt;15G PROTEIN&lt;/h3&gt;
+&lt;p&gt;Each can delivers 15g of complete protein from our proprietary citrus wheat blend, supporting muscle recovery without the heavy feeling of traditional protein drinks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;feature-card&quot;&gt;
+&lt;div class=&quot;feature-icon&quot;&gt;
+&lt;i class=&quot;fas fa-weight-scale fa-3x&quot; style=&quot;color: var(--gold);&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;h3&gt;LOW CALORIE&lt;/h3&gt;
+&lt;p&gt;At just 100 calories per can, LIFT fits perfectly into your fitness lifestyle. Enjoy the social aspect of beer without compromising your goals.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;feature-card&quot;&gt;
+&lt;div class=&quot;feature-icon&quot;&gt;
+&lt;i class=&quot;fas fa-bolt fa-3x&quot; style=&quot;color: var(--gold);&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;h3&gt;ENERGY FORMULA&lt;/h3&gt;
+&lt;p&gt;Our unique blend of B-vitamins and natural energy components supports performance without the crash associated with sugary energy drinks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Products Section --&gt;
+&lt;section id=&quot;products&quot; class=&quot;products&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;section-header&quot;&gt;
+&lt;h2&gt;OUR PRODUCTS&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;product-carousel&quot;&gt;
+&lt;div class=&quot;product-card&quot;&gt;
+&lt;img src=&quot;/api/placeholder/200/200&quot; alt=&quot;LIFT Original&quot;&gt;
+&lt;h3&gt;LIFT Original&lt;/h3&gt;
+&lt;p&gt;Our flagship protein beer with a classic golden lager taste.&lt;/p&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;BUY NOW&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;product-card&quot;&gt;
+&lt;img src=&quot;/api/placeholder/200/200&quot; alt=&quot;LIFT IPA&quot;&gt;
+&lt;h3&gt;LIFT IPA&lt;/h3&gt;
+&lt;p&gt;A hoppy twist on our protein formula for IPA lovers.&lt;/p&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;BUY NOW&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;product-card&quot;&gt;
+&lt;img src=&quot;/api/placeholder/200/200&quot; alt=&quot;LIFT Light&quot;&gt;
+&lt;h3&gt;LIFT Light&lt;/h3&gt;
+&lt;p&gt;All the protein benefits with even fewer calories (85 cal).&lt;/p&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;BUY NOW&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Testimonials Section --&gt;
+&lt;section id=&quot;testimonials&quot; class=&quot;testimonials&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;section-header&quot;&gt;
+&lt;h2&gt;WHAT ATHLETES ARE SAYING&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;testimonial-grid&quot;&gt;
+&lt;div class=&quot;testimonial-card&quot;&gt;
+&lt;p class=&quot;testimonial-text&quot;&gt;I never thought I'd find a beer that actually supports my fitness goals. LIFT has become my go-to recovery drink after intense training sessions. The protein content is perfect and it tastes amazing!&lt;/p&gt;
+&lt;div class=&quot;testimonial-author&quot;&gt;
+&lt;img src=&quot;/api/placeholder/50/50&quot; alt=&quot;Alex K.&quot;&gt;
+&lt;div&gt;
+&lt;h4&gt;Alex K.&lt;/h4&gt;
+&lt;p&gt;Competitive Powerlifter&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;testimonial-card&quot;&gt;
+&lt;p class=&quot;testimonial-text&quot;&gt;As a marathon runner, I'm always looking for ways to get more protein without adding bulk to my diet. LIFT gives me the protein I need and the refreshment I want after a long run. It's a game-changer!&lt;/p&gt;
+&lt;div class=&quot;testimonial-author&quot;&gt;
+&lt;img src=&quot;/api/placeholder/50/50&quot; alt=&quot;Testimonial author&quot;&gt;
+&lt;div&gt;
+&lt;h4&gt;Jessica M.&lt;/h4&gt;
+&lt;p&gt;Ultra Marathon Runner&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;testimonial-card&quot;&gt;
+&lt;p class=&quot;testimonial-text&quot;&gt;I recommend LIFT to all my clients who struggle with getting enough protein. It's a brilliant alternative to shakes that feels like a reward after a workout. The fact that it's low-calorie makes it perfect for any fitness goal.&lt;/p&gt;
+&lt;div class=&quot;testimonial-author&quot;&gt;
+&lt;img src=&quot;/api/placeholder/50/50&quot; alt=&quot;Testimonial author&quot;&gt;
+&lt;div&gt;
+&lt;h4&gt;Ryan T.&lt;/h4&gt;
+&lt;p&gt;Fitness Coach&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Contact Section --&gt;
+&lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;section-header&quot;&gt;
+&lt;h2&gt;GET IN TOUCH&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;contact-content&quot;&gt;
+&lt;div class=&quot;contact-info&quot;&gt;
+&lt;h3&gt;LIFT YOUR QUESTIONS&lt;/h3&gt;
+&lt;p&gt;Have questions about LIFT? Want to stock our product in your gym or store? We'd love to hear from you!&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; info@liftproteinbeer.com&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt; (555) 123-4567&lt;/p&gt;
+&lt;p&gt;&lt;i class=&quot;fas fa-map-marker-alt&quot;&gt;&lt;/i&gt; 123 Fitness Ave, Protein City, PC 12345&lt;/p&gt;
+
+&lt;div class=&quot;social-links&quot;&gt;
+&lt;a href=&quot;#&quot; class=&quot;social-icon&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;social-icon&quot;&gt;&lt;i class=&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;social-icon&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;social-icon&quot;&gt;&lt;i class=&quot;fab fa-tiktok&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;contact-form&quot;&gt;
+&lt;form id=&quot;contactForm&quot;&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Your Name&quot; required&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;Your Email&quot; required&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Subject&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+&lt;textarea class=&quot;form-control&quot; rows=&quot;5&quot; placeholder=&quot;Your Message&quot; required&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;SEND MESSAGE&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Footer --&gt;
+&lt;footer&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;newsletter&quot;&gt;
+&lt;h3&gt;JOIN OUR COMMUNITY&lt;/h3&gt;
+&lt;p&gt;Subscribe to receive updates, promotions, and fitness tips.&lt;/p&gt;
+&lt;form class=&quot;newsletter-form&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;newsletter-input&quot; placeholder=&quot;Your Email Address&quot; required&gt;
+&lt;button type=&quot;submit&quot; class=&quot;newsletter-btn&quot;&gt;SUBSCRIBE&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-nav&quot;&gt;
+&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+&lt;a href=&quot;#features&quot;&gt;Features&lt;/a&gt;
+&lt;a href=&quot;#products&quot;&gt;Products&lt;/a&gt;
+&lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Privacy Policy&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;Terms of Service&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Please drink responsibly. LIFT is only for consumers of legal drinking age.&lt;/p&gt;
+&lt;p&gt;&amp;copy; 2025 LIFT Protein Beer. All rights reserved.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+// Age verification
+function verifyAge(isOfAge) {
+const verification = document.getElementById('ageVerification');
+if (isOfAge) {
+verification.style.display = 'none';
+localStorage.setItem('ageVerified', 'true');
+} else {
+window.location.href = 'https://www.responsibility.org/';
+}
+}
+
+// Check if age was previously verified
+document.addEventListener('DOMContentLoaded', function() {
+if (localStorage.getItem('ageVerified') === 'true') {
+document.getElementById('ageVerification').style.display = 'none';
+}
+
+// Form submission (prevent default for demo)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+alert('Thank you for your message! We will get back to you soon.');
+contactForm.reset();
+});
+}
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
